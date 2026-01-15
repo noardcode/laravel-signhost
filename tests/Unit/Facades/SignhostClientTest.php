@@ -22,6 +22,9 @@ class SignhostClientTest extends TestCase
 
     public function test_headers_can_override_accept(): void
     {
+        config()->set('signhost.api.user_token', 'user-token');
+        config()->set('signhost.api.app_key', 'app-key');
+
         $client = SignhostClient::getClient();
         $headers = $client->getHeaders(['Accept' => 'application/pdf']);
 
