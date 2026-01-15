@@ -14,7 +14,6 @@ This package provides a clean, expressive API for interacting with the Signhost 
 
 ## Table of Contents
 
-
 - [Electronic Signature](#electronic-signature)
 - [ID Proof](#digital-identification-idproof)
 - [Requirements](#requirements)
@@ -37,6 +36,9 @@ This package provides a clean, expressive API for interacting with the Signhost 
   - [Simulating a Signhost ID Proof Webhook](#simulating-a-signhost-id-proof-webhook)
 - [Events](#events)
 - [Storage Structure](#storage-structure)
+- [Contributing](#contributing)
+- [Security](#security-vulnerabilities)
+- [License](#license)
 - [Support](#support)
 
 ---
@@ -532,6 +534,30 @@ transactions/{transaction_id}/signed/{md5(transaction_uuid+file_id)}.pdf
 transactions/{transaction_id}/receipt/{md5(transaction_uuid)}.pdf
 transactions/{transaction_id}/idproof/{file_id}.pdf
 ```
+
+---
+
+## Contributing
+
+Thank you for considering contributing to Testbench! You can read the contribution guide [here](CONTRIBUTING.md).
+
+---
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within this package, please contact us privately via [https://www.noardcode.nl/contact](https://www.noardcode.nl/contact).
+
+Please do not disclose security vulnerabilities publicly or via GitHub Issues.
+
+All security vulnerabilities will be promptly reviewed and addressed, and you will receive a response as soon as possible.
+
+---
+
+## License
+
+This package is open-sourced software licensed under the [MIT license](LICENSE).
+
+---
 
 ## Support
 
