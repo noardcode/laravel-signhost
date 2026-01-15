@@ -14,6 +14,7 @@ This package provides a clean, expressive API for interacting with the Signhost 
 
 ## Table of Contents
 
+
 - [Electronic Signature](#electronic-signature)
 - [ID Proof](#digital-identification-idproof)
 - [Requirements](#requirements)
@@ -36,12 +37,6 @@ This package provides a clean, expressive API for interacting with the Signhost 
   - [Simulating a Signhost ID Proof Webhook](#simulating-a-signhost-id-proof-webhook)
 - [Events](#events)
 - [Storage Structure](#storage-structure)
-- [Contributing](#contributing)
-  - [Bug Reports](#bug-reports)
-  - [Pull Requests](#pull-requests)
-  - [Coding Style](#coding-style)
-  - [Security Vulnerabilities](#security-vulnerabilities)
-- [License](#license)
 - [Support](#support)
 
 ---
@@ -143,7 +138,8 @@ To be able to receive webhooks, this endpoint must:
 
 ### Enabling Digital Identification (IdProof)
 
-**Important:** To access the production API for ID proof, you **must** implement an IdProof verification endpoint that returns a 200 status code to a POST request. This step is required and cannot be skipped.
+> **Please Note:**  
+> To access the production API for ID proof, you **must** implement an IdProof verification endpoint that returns a 200 status code to a POST request. This step is required and cannot be skipped.
 
 If you want to use **Digital Identification (IdProof)**, it’s recommended to first test your full implementation in **simulation mode**.
 
@@ -414,7 +410,7 @@ return Signhost::idproof()->redirectToSignhost($identifier);
 
 ```
 
-> **Important:**  
+> **Please Note:**  
 > Create your own identifier for the signer/entity and store it in your application. We do not store this identifier in our database, this is up to you.
 
 ---
@@ -472,7 +468,7 @@ This package comes with a build in simulation mode that can be used to test your
 
 This makes it so all interactions happen locally, no external API requests are made. This makes it ideal for initial development, local demos, or automated test pipelines.
 
-> **Important:** 
+> **Please Note:**  
 > Because the API logic depends on the data you provide, simulation mode can only generate a limited set of fake data. As a result, not all edge cases are covered, and you may need to write your own tests for comprehensive coverage.
 
 ### Simulating a Signing Activity Webhook
@@ -490,7 +486,7 @@ After calling this command with the correct uuid of the transaction, the command
 ### Simulating a Signhost ID Proof Webhook
 
 This Artisan command allows you to simulate a **Signhost ID Proof webhook** locally or in tests. It generates a complete fake payload (based on a real Signhost structure) and posts it to your app’s configured webhook endpoint. It is important to note that this command only works when the application is in **simulation mode**.
-> **Important:**
+> **Please Note:**  
 > It is also important to note that it is not possible to fake a failed check, due to the way the Signhost API works.
 
 The following command will generate a fake payload for the order with the given identifier and post it to the configured webhook endpoint:
@@ -524,7 +520,6 @@ For example, use SignhostTransactionFinalized to trigger post-signing document s
 | **SignhostTransactionFinalized** | When Signhost webhook reports completion |
 | **SignhostTransactionStarted** | After starting a transaction |
 
-
 ---
 
 ## Storage Structure
@@ -537,40 +532,6 @@ transactions/{transaction_id}/signed/{md5(transaction_uuid+file_id)}.pdf
 transactions/{transaction_id}/receipt/{md5(transaction_uuid)}.pdf
 transactions/{transaction_id}/idproof/{file_id}.pdf
 ```
-
----
-
-## Contributing
-
-Thank you for considering contributing to the Laravel Signhost package! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-### Bug Reports
-
-To encourage active collaboration, we encourage pull requests, not just bug reports. "Bug reports" may also be sent in the form of a pull request containing a failing test.
-
-### Pull Requests
-
-1. Create a new branch for your feature or bug fix.
-2. Write tests for your changes.
-3. Ensure all tests pass.
-4. Submit a pull request.
-
-### Coding Style
-
-This package follows the [PSR-12](https://www.php-fig.org/psr/psr-12/) coding standard and the [Laravel coding style](https://laravel.com/docs/contributions#coding-style). Use Laravel Pint plugin for your favorite IDE to ensure a consistent coding style.
-
-### Security Vulnerabilities
-
-If you discover a security vulnerability within this package, please [contact us](https://www.noardcode.nl/contact). All security vulnerabilities will be promptly addressed.
-
----
-
-## License
-
-This package is licensed under the [MIT license](https://opensource.org/licenses/MIT).
-Copyright (c) 2026 [NoardCode](https://www.noardcode.com/)
-
----
 
 ## Support
 
