@@ -89,29 +89,6 @@ class Transaction extends Model
         );
     }
 
-    /**
-     * Build a form set mapping per signer for convenience when preparing
-     * file metadata requests.
-     *
-     * @return array
-     */
-    public function getSignersFormSetAttribute(): array
-    {
-        $availableFormSets = [];
-        $this->documents()->each(function ($document) use (&$availableFormSets) {
-            $availableFormSets[] = $document->fileMetaData->getFormSet()?->getName();
-        });
-
-        $signers = [];
-        $this->receivers()->each(function ($signer) use ($availableFormSets, &$signers) {
-            $signers[$signer?->external_signer_id] = [
-                'FormSets' => $availableFormSets,
-            ];
-        });
-
-        return $signers;
-    }
-
     protected static function newFactory(): Factory
     {
         return TransactionFactory::new();
