@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sh_transaction_documents');
+        Schema::dropIfExists('sh_transaction_files');
     }
 };

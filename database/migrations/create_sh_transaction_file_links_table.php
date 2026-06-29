@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sh_id_proof_file_links');
+        Schema::dropIfExists('sh_transaction_file_links');
     }
 };
