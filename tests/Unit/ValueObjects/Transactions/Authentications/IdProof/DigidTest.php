@@ -1,11 +1,14 @@
 <?php
 
+use Noardcode\LaravelSignhost\Enums\ReliabilityLevel;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\Authentications\IdProof\Digid;
+
 it('returns the correct type', function () {
-    $digid = new \Noardcode\LaravelSignhost\ValueObjects\Transactions\Authentications\IdProof\Digid(
+    $digid = new Digid(
         '111222333',
         true,
-        \Noardcode\LaravelSignhost\Enums\ReliabilityLevel::High
+        ReliabilityLevel::High
     );
     expect($digid->getType())->toBe('DigiD')
-        ->and($digid->getReliabilityLevel())->toBe(\Noardcode\LaravelSignhost\Enums\ReliabilityLevel::High);
+        ->and($digid->getReliabilityLevel())->toBe(ReliabilityLevel::High);
 });

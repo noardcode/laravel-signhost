@@ -1,21 +1,30 @@
 <?php
 
+use Noardcode\LaravelSignhost\Collections\TransactionFileMetaDataFormSetsCollection;
+use Noardcode\LaravelSignhost\Collections\TransactionFileMetaDataSignersCollection;
+use Noardcode\LaravelSignhost\Enums\FormSetType;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet\FieldType;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet\Location;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\Signer;
+
 it('can be created', function () {
-    $signers = new \Noardcode\LaravelSignhost\Collections\TransactionFileMetaDataSignersCollection([
-        new \Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\Signer(
+    $signers = new TransactionFileMetaDataSignersCollection([
+        new Signer(
             id: 'Signer_1',
             formSets: ['Formset_1'],
         ),
     ]);
 
-    $formsets = new \Noardcode\LaravelSignhost\Collections\TransactionFileMetaDataFormSetsCollection([
-        new Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet(
+    $formsets = new TransactionFileMetaDataFormSetsCollection([
+        new FormSet(
             name: 'Formset_1',
             fieldTypes: [
-                new \Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet\FieldType(
+                new FieldType(
                     name: 'Field_1',
-                    formSetType: \Noardcode\LaravelSignhost\Enums\FormSetType::Signature,
-                    location: new \Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet\Location(
+                    formSetType: FormSetType::Signature,
+                    location: new Location(
                         'search',
                         1,
                         10,
@@ -31,7 +40,7 @@ it('can be created', function () {
         ),
     ]);
 
-    $fileMetaData = new Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData(
+    $fileMetaData = new FileMetaData(
         1,
         'Name',
         true,

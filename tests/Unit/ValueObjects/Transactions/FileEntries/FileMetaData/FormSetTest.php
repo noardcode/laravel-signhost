@@ -1,12 +1,15 @@
 <?php
 
 use Noardcode\LaravelSignhost\Enums\FormSetType;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet\FieldType;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet\Location;
 
 it('can be created', function () {
-    $fieldType = new Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet\FieldType(
+    $fieldType = new FieldType(
         'Field_1',
         FormSetType::Signature,
-        new Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet\Location(
+        new Location(
             'search',
             1,
             10,
@@ -19,7 +22,7 @@ it('can be created', function () {
         )
     );
 
-    $formSet = new Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet(
+    $formSet = new FormSet(
         'Formset_1',
         [$fieldType]
     );
@@ -35,7 +38,7 @@ it('can be created', function () {
 it('cannot be created without a name', function () {
     $this->expectException(InvalidArgumentException::class);
 
-    new Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet(
+    new FormSet(
         '',
         []
     );
@@ -44,7 +47,7 @@ it('cannot be created without a name', function () {
 it('cannot be created with strange characters in a name', function () {
     $this->expectException(InvalidArgumentException::class);
 
-    new Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet(
+    new FormSet(
         'J@(*(*@H%*@H%@(*%%@*H%(',
         []
     );

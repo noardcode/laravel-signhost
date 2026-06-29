@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Noardcode\LaravelSignhost\Enums\Language;
 use Noardcode\LaravelSignhost\Exceptions\SignhostException;
 use Noardcode\LaravelSignhost\Tests\TestCase;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\Receiver;
 
 class ReceiverTest extends TestCase
 {
@@ -15,7 +16,7 @@ class ReceiverTest extends TestCase
         $createdDate = Carbon::now();
         $modifiedDate = Carbon::now()->addMinutes(5);
 
-        $consent = new \Noardcode\LaravelSignhost\ValueObjects\Transactions\Receiver(
+        $consent = new Receiver(
             'John Doe',
             'john@doe.nl',
             Language::Dutch,
@@ -56,7 +57,7 @@ class ReceiverTest extends TestCase
         $createdDate = Carbon::now();
         $modifiedDate = Carbon::now()->addMinutes(5);
 
-        $consent = new \Noardcode\LaravelSignhost\ValueObjects\Transactions\Receiver(
+        $consent = new Receiver(
             'John Doe',
             'john@doe.nl',
             Language::Dutch,
@@ -79,7 +80,7 @@ class ReceiverTest extends TestCase
         $createdDate = Carbon::now();
         $modifiedDate = Carbon::now()->addMinutes(5);
 
-        new \Noardcode\LaravelSignhost\ValueObjects\Transactions\Receiver(
+        new Receiver(
             'John Doe',
             'john@doe.nl',
             Language::Dutch,
