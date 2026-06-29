@@ -14,6 +14,8 @@ use Noardcode\LaravelSignhost\Models\Transaction;
  * transaction has been stored/updated in the database.
  *
  * @event SignhostIdProofCreated
+ *
+ * @deprecated The IdProof feature is deprecated and will be removed in a future version. Signhost is discontinuing IdProof support.
  */
 class SignhostIdProofCreated
 {

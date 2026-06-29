@@ -14,6 +14,8 @@ use Illuminate\Queue\SerializesModels;
  * the incoming Request instance for consumers that need raw payload/headers.
  *
  * @event SignhostIdProofReceived
+ *
+ * @deprecated The IdProof feature is deprecated and will be removed in a future version. Signhost is discontinuing IdProof support.
  */
 class SignhostIdProofReceived
 {

@@ -26,6 +26,8 @@ class SignhostService
 
     /**
      * @return IdProof
+     *
+     * @deprecated The IdProof feature is deprecated and will be removed in a future version. Signhost is discontinuing IdProof support.
      */
     public function idProof(): IdProof
     {
