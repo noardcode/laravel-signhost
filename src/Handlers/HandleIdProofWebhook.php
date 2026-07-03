@@ -16,6 +16,8 @@ use Throwable;
  * IdProofs repository, and finally a SignhostIdProofCreated event is dispatched.
  *
  * @handler HandleIdProofWebhook
+ *
+ * @deprecated The IdProof feature is deprecated and will be removed in a future version. Signhost is discontinuing IdProof support.
  */
 class HandleIdProofWebhook
 {

@@ -5,6 +5,7 @@ namespace Noardcode\LaravelSignhost\Tests\Unit\ValueObjects\Transactions\IdProof
 use Carbon\Carbon;
 use Noardcode\LaravelSignhost\Enums\Language;
 use Noardcode\LaravelSignhost\Tests\TestCase;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\IdProof\Signer;
 
 class SignerTest extends TestCase
 {
@@ -13,7 +14,7 @@ class SignerTest extends TestCase
         $expireDate = Carbon::now()->addDays(14);
         $deligateDate = Carbon::now();
 
-        $consent = new \Noardcode\LaravelSignhost\ValueObjects\Transactions\IdProof\Signer(
+        $consent = new Signer(
             'john@doe.nl',
             'e0b39ec0-e0c6-45d9-bf0d-ae8cafbe2f48',
             'Introtext',

@@ -3,6 +3,8 @@
 namespace Noardcode\LaravelSignhost\Tests\Unit\Collections;
 
 use Noardcode\LaravelSignhost\Collections\TransactionAuthenticationsCollection;
+use Noardcode\LaravelSignhost\Contracts\AuthenticationContract;
+use Noardcode\LaravelSignhost\Contracts\ToSignhostArrayContract;
 use Noardcode\LaravelSignhost\Exceptions\SignhostException;
 use Noardcode\LaravelSignhost\Tests\TestCase;
 use Noardcode\LaravelSignhost\ValueObjects\Transactions\Authentications\Phonenumber;
@@ -40,7 +42,7 @@ class TransactionAuthenticationsCollectionTest extends TestCase
         $this->expectExceptionMessage('Items are not an instance of AuthenticationInterface or not in the correct order.');
 
         // Create an anonymous AuthenticationContract-like object that is not a final type (simulate wrong order)
-        $nonFinalAuth = new class implements \Noardcode\LaravelSignhost\Contracts\AuthenticationContract, \Noardcode\LaravelSignhost\Contracts\ToSignhostArrayContract
+        $nonFinalAuth = new class implements AuthenticationContract, ToSignhostArrayContract
         {
             public function toArray(): array
             {

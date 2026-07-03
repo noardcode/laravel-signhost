@@ -4,6 +4,8 @@ namespace Noardcode\LaravelSignhost\Tests\Unit\Enums;
 
 use Noardcode\LaravelSignhost\Enums\TransactionAuthenticationMethod;
 use Noardcode\LaravelSignhost\Tests\TestCase;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\Verifications\Digid;
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\Verifications\Phonenumber;
 
 class TransactionAuthenticationMethodTest extends TestCase
 {
@@ -12,7 +14,7 @@ class TransactionAuthenticationMethodTest extends TestCase
         $this->assertSame('DigiD', TransactionAuthenticationMethod::Digid->label());
         $this->assertSame('PhoneNumber', TransactionAuthenticationMethod::Phonenumber->label());
 
-        $this->assertSame(\Noardcode\LaravelSignhost\ValueObjects\Transactions\Verifications\Digid::class, TransactionAuthenticationMethod::Digid->value);
-        $this->assertSame(\Noardcode\LaravelSignhost\ValueObjects\Transactions\Verifications\Phonenumber::class, TransactionAuthenticationMethod::Phonenumber->value);
+        $this->assertSame(Digid::class, TransactionAuthenticationMethod::Digid->value);
+        $this->assertSame(Phonenumber::class, TransactionAuthenticationMethod::Phonenumber->value);
     }
 }

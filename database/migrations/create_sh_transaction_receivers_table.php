@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sh_transaction_signers');
+        Schema::dropIfExists('sh_transaction_receivers');
     }
 };

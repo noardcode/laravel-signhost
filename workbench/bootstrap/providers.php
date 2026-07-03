@@ -1,7 +1,11 @@
 <?php
 
+use Laravel\Boost\BoostServiceProvider;
+use Noardcode\LaravelSignhost\Providers\SignhostServiceProvider;
+use Noardcode\LaravelSignhost\Workbench\App\Providers\WorkbenchServiceProvider;
+
 return [
-    Noardcode\LaravelSignhost\Workbench\App\Providers\WorkbenchServiceProvider::class,
-    \Noardcode\LaravelSignhost\Providers\SignhostServiceProvider::class,
-    \Laravel\Boost\BoostServiceProvider::class,
+    WorkbenchServiceProvider::class,
+    SignhostServiceProvider::class,
+    BoostServiceProvider::class,
 ];

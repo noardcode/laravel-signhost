@@ -5,7 +5,7 @@ use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\Link;
 
 it('can be created', function () {
     $link = new Link(
-        \Noardcode\LaravelSignhost\Enums\FileEntryLinkRel::File,
+        FileEntryLinkRel::File,
         'application/pdf',
         'https://example.com/test.pdf'
     );

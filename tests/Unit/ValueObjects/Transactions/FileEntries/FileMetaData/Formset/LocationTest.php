@@ -1,7 +1,9 @@
 <?php
 
+use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet\Location;
+
 it('can be created', function () {
-    $location = new Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet\Location(
+    $location = new Location(
         'search',
         1,
         10,

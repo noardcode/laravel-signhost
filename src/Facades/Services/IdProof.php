@@ -18,6 +18,8 @@ use Noardcode\LaravelSignhost\Repositories\Transactions as TransactionsRepositor
  * the configured Signhost IdProof form with a validated identifier.
  *
  * @service IdProof
+ *
+ * @deprecated The IdProof feature is deprecated and will be removed in a future version. Signhost is discontinuing IdProof support.
  */
 class IdProof
 {
@@ -33,6 +35,8 @@ class IdProof
      * @return RedirectResponse|Redirector
      *
      * @throws SignhostException
+     *
+     * @deprecated The IdProof feature is deprecated and will be removed in a future version. Signhost is discontinuing IdProof support.
      */
     public function redirectToSignhost(string $identifier): Redirector|RedirectResponse
     {
@@ -78,6 +82,8 @@ class IdProof
      * @return void
      *
      * @throws SignhostException
+     *
+     * @deprecated The IdProof feature is deprecated and will be removed in a future version. Signhost is discontinuing IdProof support.
      */
     public function getDossier(Transaction $transaction, string $fileId): void
     {
@@ -96,6 +102,8 @@ class IdProof
      * @return void
      *
      * @throws ConnectionException|SignhostException
+     *
+     * @deprecated The IdProof feature is deprecated and will be removed in a future version. Signhost is discontinuing IdProof support.
      */
     public function getReceipt(Transaction $transaction): void
     {

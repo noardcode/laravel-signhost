@@ -1,5 +1,7 @@
 <?php
 
+use Noardcode\LaravelSignhost\Enums\Language;
+
 return [
 
     /**
@@ -29,7 +31,7 @@ return [
         'return_url' => env('SIGNHOST_REDIRECT_URL', null),
         'reminder_interval' => 7,
         'default_verification' => 'Scribble',
-        'default_language' => \Noardcode\LaravelSignhost\Enums\Language::English,
+        'default_language' => Language::English,
         'days_to_expire' => 90,
         'set_paragraph_on_documents' => false,
         'seal_documents' => true,
