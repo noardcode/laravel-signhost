@@ -5,7 +5,7 @@
 ![Laravel Version](https://img.shields.io/badge/Laravel-11%2B-orange?style=flat-square)
 
 > **⚠ Deprecation notice — IdProof**
-> The IdProof (digital identification) functionality in this package is being deprecated. Signhost is phasing out the current IdProof method in favour of a new identification flow. IdProof support will be removed from this package in a future release and moved to a dedicated separate package. New projects should not build on the IdProof integration provided here.
+> The IdProof (digital identification) functionality in this package is being deprecated. IdProof support will be removed from this package in a future release and moved to a dedicated separate package. New projects should not build on the IdProof integration provided here.
 
 # Laravel Signhost
 

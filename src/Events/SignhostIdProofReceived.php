@@ -15,7 +15,7 @@ use Illuminate\Queue\SerializesModels;
  *
  * @event SignhostIdProofReceived
  *
- * @deprecated The IdProof feature is deprecated and will be removed in a future version. Signhost is discontinuing IdProof support.
+ * @deprecated The IdProof feature is deprecated and will be removed in a future version.
  */
 class SignhostIdProofReceived
 {
