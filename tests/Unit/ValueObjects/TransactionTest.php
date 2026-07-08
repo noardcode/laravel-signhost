@@ -57,4 +57,20 @@ class TransactionTest extends TestCase
             'Context' => '{"key": "value"}',
         ], $transaction->toArray());
     }
+
+    public function test_default_postback_url_resolves_to_registered_route()
+    {
+        $transaction = new Transaction(
+            Language::Dutch,
+            false,
+            new TransactionSignersCollection([]),
+            new TransactionReceiversCollection([]),
+            '1234567890',
+        );
+
+        $this->assertSame(
+            route('laravel-signhost.postback.transaction'),
+            $transaction->getPostbackUrl()
+        );
+    }
 }

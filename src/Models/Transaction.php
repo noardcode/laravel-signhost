@@ -29,7 +29,7 @@ class Transaction extends Model
 
     protected $casts = [
         'object' => 'encrypted:object',
-        'status_code' => TransactionStatus::class,
+        'status' => TransactionStatus::class,
         'finalized' => 'boolean',
         'context' => 'encrypted:object',
         'webhook_response' => 'encrypted:object',

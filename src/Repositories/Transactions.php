@@ -110,10 +110,13 @@ class Transactions
     }
 
     /**
-     * Mark the transaction as finalized (set finalized_at timestamp).
+     * Mark the transaction as finalized.
      */
     public function markFinalized(Transaction $transaction): void
     {
-        $transaction->update(['finalized_at' => Carbon::now()]);
+        $transaction->update([
+            'finalized' => true,
+            'finalized_at' => Carbon::now(),
+        ]);
     }
 }

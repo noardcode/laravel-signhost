@@ -24,6 +24,7 @@ class SignhostServiceProvider extends ServiceProvider
         'create_sh_transaction_file_links_table.php',
         'create_sh_transaction_receivers_table.php',
         'create_sh_transaction_activities_table.php',
+        'update_sh_transactions_table_add_finalized.php',
     ];
 
     /**
