@@ -5,7 +5,7 @@ namespace Noardcode\LaravelSignhost\Tests\Feature\Services;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
-use Noardcode\LaravelSignhost\Collections\TransactionSignersCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionSignersCollection;
 use Noardcode\LaravelSignhost\Enums\Language;
 use Noardcode\LaravelSignhost\Events\SignhostTransactionCreated;
 use Noardcode\LaravelSignhost\Events\SignhostTransactionStarted;

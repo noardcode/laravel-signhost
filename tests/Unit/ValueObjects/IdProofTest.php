@@ -3,9 +3,9 @@
 namespace Noardcode\LaravelSignhost\Tests\Unit\ValueObjects;
 
 use Carbon\Carbon;
-use Noardcode\LaravelSignhost\Collections\TransactionFileEntriesCollection;
-use Noardcode\LaravelSignhost\Collections\TransactionReceiversCollection;
-use Noardcode\LaravelSignhost\Collections\TransactionSignersCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileEntriesCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionReceiversCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionSignersCollection;
 use Noardcode\LaravelSignhost\Enums\Language;
 use Noardcode\LaravelSignhost\Enums\SignRequestMode;
 use Noardcode\LaravelSignhost\Enums\TransactionStatus;

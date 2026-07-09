@@ -96,6 +96,7 @@ class Signing
      * @return Transaction
      *
      * @throws ConnectionException
+     * @throws SignhostException
      */
     public function startTransaction(
         Transaction $transaction,

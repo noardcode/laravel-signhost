@@ -19,7 +19,7 @@ return [
      * Webhook configuration.
      */
     'webhook' => [
-        'route' => env('SIGNHOST_WEBHOOK_ROUTE', 'laravel-signhost.postback'),
+        'route' => env('SIGNHOST_WEBHOOK_ROUTE', 'laravel-signhost.postback.transaction'),
         'secret' => env('SIGNHOST_WEBHOOK_SECRET'),
         'token' => env('SIGNHOST_WEBHOOK_TOKEN'),
     ],

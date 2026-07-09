@@ -2,7 +2,7 @@
 
 namespace Noardcode\LaravelSignhost\Tests\Unit\Collections;
 
-use Noardcode\LaravelSignhost\Collections\TransactionFileEntryLinksCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileEntryLinksCollection;
 use Noardcode\LaravelSignhost\Enums\FileEntryLinkRel;
 use Noardcode\LaravelSignhost\Tests\TestCase;
 use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\Link;

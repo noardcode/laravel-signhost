@@ -2,7 +2,7 @@
 
 namespace Noardcode\LaravelSignhost\Tests\Unit\Collections;
 
-use Noardcode\LaravelSignhost\Collections\TransactionAuthenticationsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionAuthenticationsCollection;
 use Noardcode\LaravelSignhost\Contracts\AuthenticationContract;
 use Noardcode\LaravelSignhost\Contracts\ToSignhostArrayContract;
 use Noardcode\LaravelSignhost\Exceptions\SignhostException;

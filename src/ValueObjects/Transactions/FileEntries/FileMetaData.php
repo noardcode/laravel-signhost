@@ -2,8 +2,8 @@
 
 namespace Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries;
 
-use Noardcode\LaravelSignhost\Collections\TransactionFileMetaDataFormSetsCollection;
-use Noardcode\LaravelSignhost\Collections\TransactionFileMetaDataSignersCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileMetaDataFormSetsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileMetaDataSignersCollection;
 use Noardcode\LaravelSignhost\Contracts\ToSignhostArrayContract;
 
 /**
@@ -87,5 +87,21 @@ class FileMetaData implements ToSignhostArrayContract
         $this->formSets->add($formSet);
 
         return $this->formSets;
+    }
+
+    /**
+     * Links a signer to one or more FormSets by name, so SignHost actually
+     * renders that signer's form fields on this file. Without this, a
+     * FormSet defined via `setFormSet()` is accepted by the API but never
+     * applied — SignHost falls back to its default field placement.
+     */
+    public function addSigner(FileMetaData\Signer $signer): TransactionFileMetaDataSignersCollection
+    {
+        if ($this->signers === null) {
+            $this->signers = new TransactionFileMetaDataSignersCollection;
+        }
+        $this->signers->push($signer);
+
+        return $this->signers;
     }
 }

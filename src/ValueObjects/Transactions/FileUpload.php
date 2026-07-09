@@ -4,7 +4,8 @@ namespace Noardcode\LaravelSignhost\ValueObjects\Transactions;
 
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Http\UploadedFile;
-use Noardcode\LaravelSignhost\Collections\TransactionFileMetaDataFormSetsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileMetaDataFormSetsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileMetaDataSignersCollection;
 use Noardcode\LaravelSignhost\Exceptions\SignhostException;
 use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData;
 
@@ -70,6 +71,21 @@ class FileUpload
         $this->fileMetaData->setFormSet($formSet);
 
         return $this->fileMetaData->getFormSets();
+    }
+
+    /**
+     * Links a signer to one or more FormSets (by name) on this file. Required
+     * for a FormSet set via `setFormSet()` to actually be applied by SignHost
+     * — without it, the FormSet is accepted but silently ignored.
+     *
+     * @throws FileNotFoundException
+     * @throws SignhostException
+     */
+    public function addSigner(FileMetaData\Signer $signer): TransactionFileMetaDataSignersCollection
+    {
+        $this->fileMetaData ??= $this->toFileMetaData();
+
+        return $this->fileMetaData->addSigner($signer);
     }
 
     /**

@@ -114,10 +114,17 @@ class Transaction
 
     /**
      * @throws ConnectionException
+     * @throws SignhostException
      */
     public function startTransaction(int|string $id): Response
     {
-        return Http::withHeaders($this->client->getHeaders())
+        $response = Http::withHeaders($this->client->getHeaders())
             ->put($this->client->getApiUrl('/transaction/'.$id.'/start'));
+
+        if ($response->failed()) {
+            throw new SignhostException($response->body());
+        }
+
+        return $response;
     }
 }

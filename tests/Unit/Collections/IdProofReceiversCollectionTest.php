@@ -2,7 +2,7 @@
 
 namespace Noardcode\LaravelSignhost\Tests\Unit\Collections;
 
-use Noardcode\LaravelSignhost\Collections\IdProofReceiversCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\IdProofReceiversCollection;
 use Noardcode\LaravelSignhost\Tests\TestCase;
 
 class IdProofReceiversCollectionTest extends TestCase

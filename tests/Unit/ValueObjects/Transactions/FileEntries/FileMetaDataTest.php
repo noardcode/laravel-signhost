@@ -1,7 +1,7 @@
 <?php
 
-use Noardcode\LaravelSignhost\Collections\TransactionFileMetaDataFormSetsCollection;
-use Noardcode\LaravelSignhost\Collections\TransactionFileMetaDataSignersCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileMetaDataFormSetsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileMetaDataSignersCollection;
 use Noardcode\LaravelSignhost\Enums\FormSetType;
 use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData;
 use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet;
@@ -61,4 +61,18 @@ it('can be created', function () {
         'Signers' => $signers->toArray(),
         'FormSets' => $formsets->toArray(),
     ], $fileMetaData->toArray());
+});
+
+it('links a signer to a formset via addSigner, so it actually gets applied', function () {
+    $fileMetaData = new FileMetaData(0, 'Name', false);
+
+    $fileMetaData->setFormSet(new FormSet('Formset_1', [
+        new FieldType('Field_1', FormSetType::Signature, new Location(top: 10, left: 20, width: 100, height: 50, pageNumber: 1)),
+    ]));
+
+    $fileMetaData->addSigner(new Signer(id: 'Signer_1', formSets: ['Formset_1']));
+
+    expect($fileMetaData->toArray()['Signers'])->toBe([
+        'Signer_1' => ['FormSets' => ['Formset_1']],
+    ]);
 });

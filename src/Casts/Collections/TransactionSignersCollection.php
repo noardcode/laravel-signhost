@@ -1,19 +1,19 @@
 <?php
 
-namespace Noardcode\LaravelSignhost\Collections;
+namespace Noardcode\LaravelSignhost\Casts\Collections;
 
 use Illuminate\Support\Collection;
 use Noardcode\LaravelSignhost\Contracts\ToSignhostArrayContract;
 
 /**
- * Collection TransactionFileEntryLinksCollection
+ * Collection TransactionSignersCollection
  *
- * Holds a list of Link value objects for a transaction file entry and
- * converts them to the array structure expected by Signhost.
+ * Holds a list of Signer value objects and converts them to the
+ * array structure expected by the Signhost API when required.
  *
- * @collection TransactionFileEntryLinksCollection
+ * @collection TransactionSignersCollection
  */
-class TransactionFileEntryLinksCollection extends Collection implements ToSignhostArrayContract
+class TransactionSignersCollection extends Collection implements ToSignhostArrayContract
 {
     /**
      * @param  array  $items
@@ -24,7 +24,7 @@ class TransactionFileEntryLinksCollection extends Collection implements ToSignho
     }
 
     /**
-     * Convert the collection of Link value objects to a Signhost-ready array.
+     * Convert the collection of Signer value objects to a Signhost-ready array.
      *
      * @return array
      */

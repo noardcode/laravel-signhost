@@ -2,7 +2,7 @@
 
 namespace Noardcode\LaravelSignhost\Tests\Unit\Collections;
 
-use Noardcode\LaravelSignhost\Collections\TransactionVerificationsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionVerificationsCollection;
 use Noardcode\LaravelSignhost\Exceptions\SignhostException;
 use Noardcode\LaravelSignhost\Tests\TestCase;
 use Noardcode\LaravelSignhost\ValueObjects\Transactions\Verifications\Digid;
