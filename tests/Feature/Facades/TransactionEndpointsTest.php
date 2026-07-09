@@ -50,6 +50,26 @@ class TransactionEndpointsTest extends TestCase
         $this->assertSame(200, $response->status());
     }
 
+    public function test_start_transaction_throws_when_signhost_rejects_the_request(): void
+    {
+        // Registered without SignhostClient::fake()'s broader `*/transaction/*`
+        // stub in play, since stub resolution matches in registration order —
+        // that broader stub would otherwise shadow this more specific one.
+        \Illuminate\Support\Facades\Http::fake([
+            '*/transaction/*/start' => \Illuminate\Support\Facades\Http::response(
+                ['Message' => 'Transaction already started'],
+                400
+            ),
+        ]);
+
+        $client = SignhostClient::getClient();
+        $endpoint = new TransactionEndpoint($client);
+
+        $this->expectException(\Noardcode\LaravelSignhost\Exceptions\SignhostException::class);
+
+        $endpoint->startTransaction('dummy-id');
+    }
+
     public function test_delete_transaction_returns_cancelled_status(): void
     {
         SignhostClient::fake();

@@ -2,8 +2,8 @@
 
 namespace Noardcode\LaravelSignhost\Tests\Unit\ValueObjects;
 
-use Noardcode\LaravelSignhost\Collections\TransactionReceiversCollection;
-use Noardcode\LaravelSignhost\Collections\TransactionSignersCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionReceiversCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionSignersCollection;
 use Noardcode\LaravelSignhost\Enums\Language;
 use Noardcode\LaravelSignhost\Enums\SignRequestMode;
 use Noardcode\LaravelSignhost\Enums\TransactionStatus;
@@ -56,5 +56,21 @@ class TransactionTest extends TestCase
             'CancelationReason' => 'Cancellation Reason',
             'Context' => '{"key": "value"}',
         ], $transaction->toArray());
+    }
+
+    public function test_default_postback_url_resolves_to_registered_route()
+    {
+        $transaction = new Transaction(
+            Language::Dutch,
+            false,
+            new TransactionSignersCollection([]),
+            new TransactionReceiversCollection([]),
+            '1234567890',
+        );
+
+        $this->assertSame(
+            route('laravel-signhost.postback.transaction'),
+            $transaction->getPostbackUrl()
+        );
     }
 }

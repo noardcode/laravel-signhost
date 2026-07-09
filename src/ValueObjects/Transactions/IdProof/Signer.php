@@ -4,8 +4,8 @@ namespace Noardcode\LaravelSignhost\ValueObjects\Transactions\IdProof;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Noardcode\LaravelSignhost\Collections\TransactionAuthenticationsCollection;
-use Noardcode\LaravelSignhost\Collections\TransactionVerificationsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionAuthenticationsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionVerificationsCollection;
 use Noardcode\LaravelSignhost\Contracts\ToSignhostArrayContract;
 use Noardcode\LaravelSignhost\Enums\Language;
 

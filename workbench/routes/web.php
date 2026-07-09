@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
-use Noardcode\LaravelSignhost\Collections\TransactionSignersCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionSignersCollection;
 use Noardcode\LaravelSignhost\Enums\Language;
 use Noardcode\LaravelSignhost\Facades\Signhost;
 use Noardcode\LaravelSignhost\Facades\SignhostClient;

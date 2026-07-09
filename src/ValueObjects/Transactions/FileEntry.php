@@ -2,7 +2,7 @@
 
 namespace Noardcode\LaravelSignhost\ValueObjects\Transactions;
 
-use Noardcode\LaravelSignhost\Collections\TransactionFileEntryLinksCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileEntryLinksCollection;
 use Noardcode\LaravelSignhost\Contracts\ToSignhostArrayContract;
 
 /**

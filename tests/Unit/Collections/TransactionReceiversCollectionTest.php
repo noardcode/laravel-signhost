@@ -2,7 +2,7 @@
 
 namespace Noardcode\LaravelSignhost\Tests\Unit\Collections;
 
-use Noardcode\LaravelSignhost\Collections\TransactionReceiversCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionReceiversCollection;
 use Noardcode\LaravelSignhost\Tests\TestCase;
 
 class TransactionReceiversCollectionTest extends TestCase

@@ -2,7 +2,7 @@
 
 namespace Noardcode\LaravelSignhost\Tests\Unit\Collections;
 
-use Noardcode\LaravelSignhost\Collections\TransactionFileMetaDataFormSetsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileMetaDataFormSetsCollection;
 use Noardcode\LaravelSignhost\Enums\FormSetType;
 use Noardcode\LaravelSignhost\Tests\TestCase;
 use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet;

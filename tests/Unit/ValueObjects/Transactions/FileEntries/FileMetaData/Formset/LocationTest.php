@@ -27,10 +27,31 @@ it('can be created', function () {
 
     $this->assertEquals([
         'Search' => 'search',
-        'Occurence' => 1,
+        'Occurrence' => 1,
         'Top' => 10,
         'Right' => 20,
         'Bottom' => 30,
+        'Left' => 40,
+        'Width' => 100,
+        'Height' => 50,
+        'PageNumber' => 2,
+    ], $location->toArray());
+});
+
+it('omits Search and Occurrence for pure coordinate-based placement', function () {
+    $location = new Location(
+        top: 10,
+        left: 40,
+        width: 100,
+        height: 50,
+        pageNumber: 2,
+    );
+
+    expect($location->getSearch())->toBeNull()
+        ->and($location->getOccurence())->toBeNull();
+
+    $this->assertEquals([
+        'Top' => 10,
         'Left' => 40,
         'Width' => 100,
         'Height' => 50,

@@ -220,14 +220,7 @@ This will copy all migration files from the package into your `database/migratio
 This example shows how to create a new transaction and upload a PDF file.
 
 ```php
-use Illuminate\Support\Facades\Storage;
-use Noardcode\LaravelSignhost\Enums\Language;
-use Noardcode\LaravelSignhost\Facades\Signhost;
-use Noardcode\LaravelSignhost\ValueObjects\Transaction as TransactionVO;
-use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileUpload;
-use Noardcode\LaravelSignhost\Collections\TransactionSignersCollection;
-use Noardcode\LaravelSignhost\ValueObjects\Transactions\Signer;
-use Noardcode\LaravelSignhost\ValueObjects\Transactions\Verifications\Scribble;
+use Illuminate\Support\Facades\Storage;use Noardcode\LaravelSignhost\Casts\Collections\TransactionSignersCollection;use Noardcode\LaravelSignhost\Enums\Language;use Noardcode\LaravelSignhost\Facades\Signhost;use Noardcode\LaravelSignhost\ValueObjects\Transaction as TransactionVO;use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileUpload;use Noardcode\LaravelSignhost\ValueObjects\Transactions\Signer;use Noardcode\LaravelSignhost\ValueObjects\Transactions\Verifications\Scribble;
 
 // Define your signer(s)
 $signers = new TransactionSignersCollection([
@@ -275,16 +268,7 @@ Signhost::signing()->startTransaction($storedTransaction);
 This example shows how you can use FormSets to create a more advanced transaction. This will allow you to create a transaction where you can specify where the user should interact with the documents while signing.
 
 ```php
-use Illuminate\Support\Facades\Storage;
-use Noardcode\LaravelSignhost\Enums\Language;
-use Noardcode\LaravelSignhost\Facades\Signhost;
-use Noardcode\LaravelSignhost\ValueObjects\Transaction as TransactionVO;
-use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileUpload;
-use Noardcode\LaravelSignhost\Collections\TransactionSignersCollection;
-use Noardcode\LaravelSignhost\ValueObjects\Transactions\Signer;
-use Noardcode\LaravelSignhost\ValueObjects\Transactions\Verifications\Scribble;
-use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData;
-use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet;
+use Illuminate\Support\Facades\Storage;use Noardcode\LaravelSignhost\Casts\Collections\TransactionSignersCollection;use Noardcode\LaravelSignhost\Enums\Language;use Noardcode\LaravelSignhost\ValueObjects\Transaction as TransactionVO;use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData;use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\FileMetaData\FormSet;use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileUpload;use Noardcode\LaravelSignhost\ValueObjects\Transactions\Signer;use Noardcode\LaravelSignhost\ValueObjects\Transactions\Verifications\Scribble;
 
 // Define your signer(s)
 $signers = new TransactionSignersCollection([
@@ -377,13 +361,7 @@ You can store the signed document(s) and the signing receipt for verification. T
 See the [Events](#events) section below to learn how you can use package events to trigger actions when transaction data becomes available.
 
 ```php
-use Illuminate\Support\Facades\Storage;
-use Noardcode\LaravelSignhost\Enums\Language;
 use Noardcode\LaravelSignhost\Facades\Signhost;
-use Noardcode\LaravelSignhost\ValueObjects\Transaction as TransactionVO;
-use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileUpload;
-use Noardcode\LaravelSignhost\Collections\TransactionSignersCollection;
-use Noardcode\LaravelSignhost\ValueObjects\Transactions\Signer;
 
 // 1) After the signer completes, download the signed document(s)
 Signhost::signing()->getSignedFiles($storedTransaction);

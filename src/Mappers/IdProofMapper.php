@@ -4,10 +4,10 @@ namespace Noardcode\LaravelSignhost\Mappers;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
-use Noardcode\LaravelSignhost\Collections\TransactionFileEntriesCollection;
-use Noardcode\LaravelSignhost\Collections\TransactionFileEntryLinksCollection;
-use Noardcode\LaravelSignhost\Collections\TransactionReceiversCollection;
-use Noardcode\LaravelSignhost\Collections\TransactionSignersCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileEntriesCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileEntryLinksCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionReceiversCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionSignersCollection;
 use Noardcode\LaravelSignhost\Enums\FileEntryLinkRel;
 use Noardcode\LaravelSignhost\Enums\Language;
 use Noardcode\LaravelSignhost\Enums\SignRequestMode;

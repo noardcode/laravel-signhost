@@ -3,8 +3,8 @@
 namespace Noardcode\LaravelSignhost\Tests\Unit\ValueObjects\Transactions;
 
 use Carbon\Carbon;
-use Noardcode\LaravelSignhost\Collections\TransactionAuthenticationsCollection;
-use Noardcode\LaravelSignhost\Collections\TransactionVerificationsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionAuthenticationsCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionVerificationsCollection;
 use Noardcode\LaravelSignhost\Enums\Language;
 use Noardcode\LaravelSignhost\Tests\TestCase;
 use Noardcode\LaravelSignhost\ValueObjects\Transactions\Authentications\Phonenumber;

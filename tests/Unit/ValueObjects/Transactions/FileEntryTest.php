@@ -3,7 +3,7 @@
 namespace Noardcode\LaravelSignhost\Tests\Unit\ValueObjects\Transactions;
 
 use Illuminate\Support\Str;
-use Noardcode\LaravelSignhost\Collections\TransactionFileEntryLinksCollection;
+use Noardcode\LaravelSignhost\Casts\Collections\TransactionFileEntryLinksCollection;
 use Noardcode\LaravelSignhost\Enums\FileEntryLinkRel;
 use Noardcode\LaravelSignhost\Tests\TestCase;
 use Noardcode\LaravelSignhost\ValueObjects\Transactions\FileEntries\Link;

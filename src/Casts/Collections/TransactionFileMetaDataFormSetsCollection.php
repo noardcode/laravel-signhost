@@ -1,6 +1,6 @@
 <?php
 
-namespace Noardcode\LaravelSignhost\Collections;
+namespace Noardcode\LaravelSignhost\Casts\Collections;
 
 use Illuminate\Support\Collection;
 use Noardcode\LaravelSignhost\Contracts\ToSignhostArrayContract;
